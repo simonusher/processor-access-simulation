@@ -1,7 +1,5 @@
 package com.company;
 
-import java.util.List;
-
 /**
  * Created by Igor on 09.03.2017.
  */

@@ -14,10 +14,6 @@ public abstract class Strategy {
     protected int startIndex;
     protected int endIndex;
 
-    public Strategy(){
-
-    }
-
     public Strategy(Queue queue) {
         this.queue = queue;
         this.startIndex = 0;

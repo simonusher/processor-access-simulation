@@ -29,23 +29,10 @@ public class Queue {
 
         patc = new ProcessArrivalTimeComparator();
         processList.sort(patc);
-//        System.out.println(size + " " + arrivedAtStart + " " + processList.size());
     }
 
     public List<Process> getProcessList() {
         return processList;
-    }
-
-    public void setProcessList(List<Process> processList) {
-        this.processList = processList;
-    }
-
-    public int getAcc() {
-        return acc;
-    }
-
-    public void setAcc(int acc) {
-        this.acc = acc;
     }
 
     public String toString(){

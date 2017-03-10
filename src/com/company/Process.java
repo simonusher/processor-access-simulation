@@ -10,11 +10,6 @@ public class Process {
     private int doneTime;
     private int remainingTime;
 
-
-    public Process(){
-
-    }
-
     public Process(int arrivalTime, int burstTime, int waitTime){
         this.arrivalTime = arrivalTime;
         this.burstTime = burstTime;
@@ -27,36 +22,17 @@ public class Process {
         return arrivalTime;
     }
 
-    public void setArrivalTime(int arrivalTime) {
-        this.arrivalTime = arrivalTime;
-    }
-
     public int getBurstTime() {
         return burstTime;
     }
 
-    public void setBurstTime(int burstTime) {
-        this.burstTime = burstTime;
-    }
 
     public int getWaitTime() {
         return waitTime;
     }
 
-    public void setWaitTime(int waitTime) {
-        this.waitTime = waitTime;
-    }
-
     public void addWaitTime(int waitTime){
         this.waitTime+=waitTime;
-    }
-
-    public int getDoneTime() {
-        return doneTime;
-    }
-
-    public void setDoneTime(int doneTime) {
-        this.doneTime = doneTime;
     }
 
     public void addDoneTime(int doneTime){
@@ -69,10 +45,6 @@ public class Process {
 
     public int getRemainingTime() {
         return remainingTime;
-    }
-
-    public void setRemainingTime(int remainingTime) {
-        this.remainingTime = remainingTime;
     }
 
     public static Process generateRandomProcess(int arrivalTime){
