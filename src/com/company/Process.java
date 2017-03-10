@@ -7,7 +7,6 @@ public class Process {
     private int arrivalTime;
     private int burstTime;
     private int waitTime;
-    private int finishedTime;
     private int doneTime;
     private int remainingTime;
 
@@ -52,14 +51,6 @@ public class Process {
         this.waitTime+=waitTime;
     }
 
-    public int getFinishedTime() {
-        return finishedTime;
-    }
-
-    public void setFinishedTime(int finishedTime) {
-        this.finishedTime = finishedTime;
-    }
-
     public int getDoneTime() {
         return doneTime;
     }
@@ -87,10 +78,9 @@ public class Process {
     public static Process generateRandomProcess(int arrivalTime){
         Random generator = new Random();
         int burstTime;
-        int waitTime;
+        int waitTime = 0;
         int temp;
 
-        waitTime = 0;
         temp = generator.nextInt(100)+1;
         if(temp>90){
             burstTime = generator.nextInt(30)+21;
@@ -106,13 +96,12 @@ public class Process {
 
     public void reset(){
         waitTime = 0;
-        finishedTime = 0;
         doneTime = 0;
         remainingTime = burstTime - doneTime;
     }
 
     public String toString(){
-        return String.format("%-3d %-3d %-3d %-3d", arrivalTime, burstTime, waitTime, finishedTime);
+        return String.format("%-3d %-3d %-3d %-3d %-3d", arrivalTime, burstTime, waitTime, doneTime, remainingTime );
     }
 
     public boolean isDone(){
