@@ -1,7 +1,6 @@
 package com.company;
 
 import java.util.Collections;
-import java.util.List;
 
 /**
  * Created by Igor on 09.03.2017.
@@ -23,6 +22,8 @@ public class SJFW extends Strategy {
                 while (!activeProcess.isDone()) {
                     super.passTime();
                     super.rangeCheck();
+                    Collections.sort(activeQueue, prtc);
+                    activeProcess = processQueue.get(i);
                 }
             }
         }
