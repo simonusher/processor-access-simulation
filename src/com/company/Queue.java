@@ -13,7 +13,11 @@ public class Queue {
     public Queue(){
         processList = new ArrayList<>();
         Random generator = new Random();
-        int size = generator.nextInt(21) + 30;
+
+        int processesFrom = 100;
+        int processesTo = 1000;
+
+        int size = generator.nextInt(processesFrom +1) + (processesTo - processesFrom);
         int arrivedAtStart = generator.nextInt(size-1) + 2;
         int arrivedLater = size - arrivedAtStart;
 
@@ -29,6 +33,10 @@ public class Queue {
 
         patc = new ProcessArrivalTimeComparator();
         processList.sort(patc);
+    }
+
+    public void setProcessList(List<Process> processList) {
+        this.processList = processList;
     }
 
     public List<Process> getProcessList() {
